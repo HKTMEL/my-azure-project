@@ -12,7 +12,7 @@ jobs:
         uses: azure/aci-deploy@v1
         with:
           resource-group: AzureLearning-RG
-          dns-name-label: yourname-azure-git-test
+          dns-name-label: dakat-azure-git-test
           image: ://mcr.microsoft.com
           name: my-git-deployed-app
           location: 'east us'
