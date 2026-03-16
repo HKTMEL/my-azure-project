@@ -1,0 +1,18 @@
+name: Deploy to ACI
+on: [push]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Deploy to ACI
+        uses: azure/aci-deploy@v1
+        with:
+          resource-group: AzureLearning-RG
+          dns-name-label: yourname-azure-git-test
+          image: ://mcr.microsoft.com
+          name: my-git-deployed-app
+          location: 'east us'
